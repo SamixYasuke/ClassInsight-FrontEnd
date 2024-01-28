@@ -1,0 +1,118 @@
+.EditFormModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.EditFormModalForm {
+  background-color: rgb(255, 255, 255);
+  width: 65%;
+  height: 70%;
+  border-radius: 50px;
+  padding: 30px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.EditFormModalForm > div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.EditFormModalForm > div > img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.EditFormModalForm > input {
+  width: 80%;
+  margin: 10px auto;
+  box-sizing: border-box;
+  padding: 13px 30px;
+  outline: none;
+}
+
+.EditFormModalForm > input::placeholder {
+  transition: transform 0.2s ease-in-out;
+}
+
+.EditFormModalForm > input:focus::placeholder {
+  transform: translateY(-10px);
+  font-size: small;
+}
+
+.EditFormModalForm > button {
+  width: 50%;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 10px solid black;
+  display: inline-block;
+  padding: 17px 0;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 black;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: white;
+}
+
+.EditFormModalForm > button:hover {
+  transform: translateY(-3px);
+}
+
+.editModalFormLoadingDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editModalFormErrorDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 30vh;
+}
+
+.editModalFormErrorDiv > p {
+  color: red;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .EditFormModalForm {
+    background-color: rgb(255, 255, 255);
+    width: 85%;
+    height: 85%;
+    border-radius: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    max-width: 1200px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .EditFormModalForm {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 85%;
+    border-radius: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    max-width: 1200px;
+  }
+}

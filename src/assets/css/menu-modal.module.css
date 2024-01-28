@@ -1,0 +1,80 @@
+.menuModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menuModalDiv {
+  background-color: rgb(255, 255, 255);
+  width: 65%;
+  height: 70%;
+  border-radius: 50px;
+  padding: 30px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.menuModalDiv > div:nth-child(1) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.menuModalDiv > div:nth-child(1) > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menuModalDiv > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  gap: 50px;
+}
+
+.menuModalDiv > div:nth-child(2) > button {
+  color: black;
+  border: 10px solid black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 black;
+  cursor: pointer;
+  width: 20%;
+  max-width: 300px;
+  min-width: 200px;
+  margin: 15px auto;
+  padding: 15px 0;
+  background-color: transparent;
+  transition: transform 0.2s ease-in-out;
+}
+
+.menuModalDiv > div:nth-child(2) > button:hover {
+  transform: translateY(-4px);
+}
+
+@media screen and (max-width: 700px) {
+  .menuModalDiv {
+    width: 90%;
+  }
+
+  .menuModalDiv > div:nth-child(2) > button {
+    min-width: 150px;
+  }
+}

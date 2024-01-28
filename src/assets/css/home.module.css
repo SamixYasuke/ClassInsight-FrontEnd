@@ -1,0 +1,65 @@
+html,
+body {
+  font-size: 16px;
+}
+
+.registerStyleMainContainer > h1 {
+  font-size: 1.9rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.registerStyleMainContainer > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px auto;
+}
+
+.registerStyleMainContainer > div > p {
+  font-size: 1.7rem;
+}
+
+.registerStyleMainContainer > div > button {
+  text-decoration: none;
+  color: black;
+  border: 10px solid black;
+  display: inline-block;
+  padding: 20px 10px;
+  width: 90%;
+  max-width: 300px;
+  text-decoration: none;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 black;
+  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.registerStyleMainContainer > div > button:hover {
+  transform: translateY(-10px);
+}
+
+.registerStyleMainContainer > div > img {
+  width: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.logInContainer {
+  margin-top: 40px;
+}
+
+.logInContainer > p > span > button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+}

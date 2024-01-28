@@ -1,0 +1,160 @@
+.createFormContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto;
+  width: 80%;
+  height: 100%;
+  max-width: 1500px;
+}
+
+.createFormContainer > div {
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  margin: 20px auto;
+}
+
+.createFormContainer > div > img:nth-child(1) {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.createFormContainer > div > img:nth-child(2) {
+  width: 39px;
+  height: 39px;
+  cursor: pointer;
+}
+
+.createFormInputsContainer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.createFormInputsContainer > div > label {
+  margin: 10px auto;
+  width: 60%;
+}
+
+.createFormInputsContainer > div > input {
+  box-sizing: border-box;
+  width: 60%;
+  padding: 15px 20px;
+  margin: 0 auto;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.createFormInputsContainer > div > input::placeholder {
+  transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+.createFormInputsContainer > div > input:focus::placeholder {
+  transform: translateY(-8px);
+  font-size: small;
+}
+
+.createFormLevelContainer {
+  text-align: center;
+  flex-direction: row !important;
+}
+
+.createFormInputsContainer > p {
+  text-align: center;
+}
+
+.createFormBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.createFormBtnContainer > button {
+  width: 50%;
+  background-color: transparent;
+  color: black;
+  border: 10px solid black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 black;
+  cursor: pointer;
+  width: 30%;
+  max-width: 300px;
+  min-width: 150px;
+  margin: 15px auto;
+  padding: 10px 0;
+  transition: transform 0.2s ease-in-out;
+  font-weight: 900;
+}
+
+.createFormBtnContainer > button:hover {
+  transform: translateY(-4px);
+}
+
+.createFormInputsContainer > div:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+  width: 60%;
+}
+
+.createFormInputsContainer > div:nth-child(3) > select {
+  width: 60%;
+  box-sizing: border-box;
+  padding: 15px 20px;
+  outline: none;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .createFormInputsContainer > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    width: 80%;
+  }
+
+  .createFormInputsContainer > div:nth-child(3) > select {
+    width: 100%;
+  }
+
+  .createFormContainer {
+    width: 100%;
+  }
+  .createFormContainer > div {
+    width: 100%;
+  }
+
+  .createFormInputsContainer > div {
+    width: 100%;
+  }
+
+  .createFormContainer > div > img:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .createFormContainer > div > img:nth-child(2) {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+
+  .createFormInputsContainer > div > input {
+    box-sizing: border-box;
+    width: 80%;
+    padding: 15px 20px;
+    margin: 0 auto;
+    outline: none;
+    font-size: 0.9rem;
+  }
+}

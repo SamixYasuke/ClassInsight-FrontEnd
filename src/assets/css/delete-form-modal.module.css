@@ -1,0 +1,110 @@
+.deleteFormModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.deleteFormModalForm {
+  background-color: rgb(255, 255, 255);
+  width: 65%;
+  height: 70%;
+  border-radius: 50px;
+  padding: 30px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.deleteFormModalForm > p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.deleteFormModalForm > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.deleteFormModalForm > div > button:nth-child(1) {
+  width: 20%;
+  max-width: 200px;
+  min-width: 80px;
+  margin-top: 20px;
+  border: 10px solid black;
+  display: inline-block;
+  padding: 17px 0;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 black;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: rgb(122, 207, 42);
+}
+
+.deleteFormModalForm > div > button:nth-child(2) {
+  width: 20%;
+  max-width: 200px;
+  min-width: 80px;
+  margin-top: 20px;
+  border: 10px solid black;
+  display: inline-block;
+  padding: 17px 0;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 black;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  background-color: rgb(255, 0, 0);
+}
+
+.deleteFormModalForm > div > button:hover {
+  transform: translateY(-3px);
+}
+
+.deleteFormModalForm > div > button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(185, 185, 185);
+}
+
+@media screen and (max-width: 800px) {
+  .deleteFormModalForm {
+    background-color: rgb(255, 255, 255);
+    width: 85%;
+    height: 85%;
+    border-radius: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    max-width: 1200px;
+  }
+
+  .deleteFormModalForm > p {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .deleteFormModalForm {
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    height: 85%;
+    border-radius: 50px;
+    padding: 30px;
+    box-sizing: border-box;
+    max-width: 1200px;
+  }
+}

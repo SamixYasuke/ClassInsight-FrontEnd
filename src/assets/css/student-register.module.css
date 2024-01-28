@@ -1,0 +1,117 @@
+.studentRegisterContainer {
+  margin: 0 auto;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 50px 0;
+}
+
+.studentRegisterContainer > p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.studentRegisterContainer > h3 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.studentRegisterFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 900px;
+}
+
+.studentRegisterFormContainer > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.studentRegisterFormContainer > div > label {
+  margin: 15px 0;
+}
+
+.studentRegisterFormContainer > div > input {
+  box-sizing: border-box;
+  padding: 13px 20px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  border-radius: 15px;
+  outline: none;
+  border: 2px solid black;
+}
+
+.studentRegisterFormContainer > div > input::placeholder {
+  transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+.studentRegisterFormContainer > div > input:focus::placeholder {
+  transform: translateY(-10px);
+  font-size: 0.7rem;
+}
+
+.studentRegisterFormContainer > div > select {
+  box-sizing: border-box;
+  padding: 20px 0;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  border: 2px solid black;
+}
+
+.studentRegisterSubmitBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.studentRegisterSubmitBtnContainer > button {
+  width: 55%;
+  max-width: 300px;
+  color: black;
+  border: 10px solid black;
+  display: inline-block;
+  padding: 15px 0;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 black;
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.studentRegisterSubmitBtnContainer > button:hover {
+  transform: translateY(-5px);
+}
+
+.studentRegisterLoadingSpinnerContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 800px) {
+  .studentRegisterContainer {
+    width: 100%;
+  }
+
+  .studentRegisterFormContainer {
+    width: 90%;
+  }
+
+  .studentRegisterSubmitBtnContainer > button {
+    font-size: 0.8rem;
+  }
+}
