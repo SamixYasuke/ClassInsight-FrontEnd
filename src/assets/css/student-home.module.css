@@ -194,6 +194,7 @@
   .studentHomeStylesContainer > div:nth-child(2) > p {
     width: 80%;
     padding: 10px 25px;
+    font-size: 0.8rem;
   }
 
   .studentHomeStylesContainer > div:nth-child(4) {
@@ -209,6 +210,14 @@
   .studentHomeStylesContainer > div:nth-child(2) > img {
     width: 30px;
     height: 30px;
+  }
+
+  .studentHomeStylesContainer > div:nth-child(1) > button {
+    font-size: 0.8rem;
+  }
+
+  .studentHomeStylesContainer > div:nth-child(3) > div > p {
+    font-size: 0.8rem;
   }
 }
 
