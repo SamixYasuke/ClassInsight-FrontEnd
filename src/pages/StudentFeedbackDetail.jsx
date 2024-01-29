@@ -64,6 +64,18 @@ const StudentFeedbackDetail = () => {
     setModalisOpen((prev) => !prev);
   };
 
+  const getClassForValue = (value) => {
+    switch (value) {
+      case "positive":
+        return studentFeedbackStyles.positiveAspect;
+      case "negative":
+        return studentFeedbackStyles.negativeAspect;
+      case "neutral":
+      default:
+        return studentFeedbackStyles.neutralAspect;
+    }
+  };
+
   if (isLoading || isgettingData) {
     return (
       <div className={studentFeedbackStyles.studentFeedbackSpinnerContainer}>
@@ -122,9 +134,7 @@ const StudentFeedbackDetail = () => {
               ).map(([aspect, value]) => (
                 <div key={aspect}>
                   <p>{aspect}</p>
-                  <p className={studentFeedbackStyles.positiveAspect}>
-                    {value}
-                  </p>
+                  <p className={getClassForValue(value)}>{value}</p>
                 </div>
               ))}
           </div>
