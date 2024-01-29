@@ -11,14 +11,6 @@ const StudentSubmittedForms = ({
 }) => {
   const { submittedForms } = formData;
 
-  if (isFetchingForms) {
-    return (
-      <section>
-        <LoadingFormSpinner />
-      </section>
-    );
-  }
-
   if (unExpectedError) {
     return (
       <section>
