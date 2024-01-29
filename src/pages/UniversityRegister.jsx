@@ -67,6 +67,7 @@ const UniversityRegister = () => {
           toast.error(
             "A university has been registered with this same authentication id"
           );
+          navigate("/");
         } else if (errorMessage.includes("email address")) {
           toast.error(
             "A university has been registered with this same email address"
@@ -75,6 +76,7 @@ const UniversityRegister = () => {
           toast.error(
             "The authentication id is already associated with a student"
           );
+          navigate("/");
         } else {
           toast.error(errorMessage);
         }
