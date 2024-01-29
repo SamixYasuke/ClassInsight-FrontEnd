@@ -41,13 +41,13 @@ export const createPieChartData = (formData, getColorSchemeForAspect) => {
 
 export const getColorSchemeForAspect = (aspect) => {
   const colorSchemes = {
-    instructional_effectiveness: ["orange", "yellow", "black"],
-    learning_environment: ["green", "yellow", "black"],
-    assessment_feedback_and_fairness: ["purple", "yellow", "black"],
-    assessment_evaluation_methods: ["blue", "yellow", "black"],
-    lecture_quality: ["pink", "yellow", "black"],
-    instructor_availability: ["pink", "yellow", "black"],
-    classroom_interaction: ["gray", "yellow", "black"],
+    instructional_effectiveness: ["orange", "black", "red"],
+    learning_environment: ["green", "black", "red"],
+    assessment_feedback_and_fairness: ["purple", "black", "red"],
+    assessment_evaluation_methods: ["blue", "black", "red"],
+    lecture_quality: ["pink", "black", "red"],
+    instructor_availability: ["pink", "black", "red"],
+    classroom_interaction: ["gray", "black", "red"],
   };
-  return colorSchemes[aspect] || ["aqua", "yellow", "black"];
+  return colorSchemes[aspect] || ["aqua", "black", "red"];
 };
