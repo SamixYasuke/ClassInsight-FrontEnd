@@ -123,7 +123,9 @@ const StudentHome = () => {
         </div>
         <div>
           {isFetchingForms ? (
-            <LoadingFormSpinner />
+            <section>
+              <LoadingFormSpinner />
+            </section>
           ) : (
             <>
               {btnState === "UNSUBMITTED" && (
