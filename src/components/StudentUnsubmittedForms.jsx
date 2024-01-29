@@ -13,14 +13,6 @@ const StudentUnsubmittedForms = ({
   const { unsubmittedForms } = formData;
   const navigate = useNavigate();
 
-  if (isFetchingForms) {
-    return (
-      <section>
-        <LoadingFormSpinner />
-      </section>
-    );
-  }
-
   if (unExpectedError) {
     return (
       <section>
