@@ -105,10 +105,12 @@ const StudentRegister = () => {
         const statusCode = error.response.status;
         if (statusCode === 409) {
           toast.error("User already exists with the provided details");
+          navigate("/");
         } else if (statusCode === 404) {
           toast.error(
             "Authentication ID is already associated with a University"
           );
+          navigate("/");
         } else {
           toast.error("An error occurred while registering student");
         }
