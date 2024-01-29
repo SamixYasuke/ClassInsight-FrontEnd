@@ -122,21 +122,27 @@ const StudentHome = () => {
           {user?.given_name && <p>Welcome Back {user?.given_name}</p>}
         </div>
         <div>
-          {btnState === "UNSUBMITTED" && (
-            <StudentUnsubmittedForms
-              formData={formData}
-              isFetchingForms={isFetchingForms}
-              unExpectedError={unExpectedError}
-              fetchData={fetchData}
-            />
-          )}
-          {btnState === "SUBMITTED" && (
-            <StudentSubmittedForms
-              formData={formData}
-              isFetchingForms={isFetchingForms}
-              unExpectedError={unExpectedError}
-              fetchData={fetchData}
-            />
+          {isFetchingForms ? (
+            <LoadingFormSpinner />
+          ) : (
+            <>
+              {btnState === "UNSUBMITTED" && (
+                <StudentUnsubmittedForms
+                  formData={formData}
+                  isFetchingForms={isFetchingForms}
+                  unExpectedError={unExpectedError}
+                  fetchData={fetchData}
+                />
+              )}
+              {btnState === "SUBMITTED" && (
+                <StudentSubmittedForms
+                  formData={formData}
+                  isFetchingForms={isFetchingForms}
+                  unExpectedError={unExpectedError}
+                  fetchData={fetchData}
+                />
+              )}
+            </>
           )}
         </div>
         <div>
