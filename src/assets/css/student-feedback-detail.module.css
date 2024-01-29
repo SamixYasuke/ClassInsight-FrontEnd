@@ -197,15 +197,15 @@
 }
 
 .postiveAspect {
-  color: greenyellow;
+  color: rgb(159, 243, 32) !important;
 }
 
 .neutralAspect {
-  color: black;
+  color: black !important;
 }
 
 .negativeAspect {
-  color: red;
+  color: red !important;
 }
 
 @media screen and (max-width: 700px) {
