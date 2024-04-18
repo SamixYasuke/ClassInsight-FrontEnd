@@ -18,7 +18,8 @@ import StudentMenuModal from "../components/StudentMenuModal";
 
 const StudentHome = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, loginWithRedirect, user, isLoading } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, user, isLoading, error } =
+    useAuth0();
   const [btnState, setBtnState] = useState("UNSUBMITTED");
   const [formData, setFormData] = useState({});
   const [isFetchingForms, setIsFetchingForms] = useState(false);
@@ -29,7 +30,7 @@ const StudentHome = () => {
     checkStudentAuth(
       isLoading,
       user,
-      loginWithRedirect,
+      // loginWithRedirect,
       isAuthenticated,
       navigate,
       toast
@@ -39,6 +40,13 @@ const StudentHome = () => {
       fetchData();
     }
   }, [isAuthenticated, isLoading, navigate, user, btnState]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      toast.warn("Please authenticate before accessing student dashboard.");
+      navigate("/");
+    }
+  }, [navigate]);
 
   const fetchData = async (page = 1) => {
     setIsFetchingForms(true);
