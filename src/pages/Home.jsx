@@ -1,11 +1,31 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useAuth0 } from "@auth0/auth0-react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import homeStyle from "../assets/css/home.module.css";
 import RootImage from "../components/RootImage";
 
-export const Home = () => {
+const Home = () => {
   const navigate = useNavigate();
+  const { isAuthenticated, loginWithPopup, isLoading } = useAuth0();
+
+  const handleAuthentication = async (destination) => {
+    try {
+      await loginWithPopup();
+      navigate(`/${destination}/home`);
+    } catch (error) {
+      toast.error("Authentication Failed");
+    }
+  };
+
+  const redirectTo = (destination) => {
+    if (isAuthenticated) {
+      navigate(`/${destination}/home`);
+    } else {
+      handleAuthentication(destination);
+    }
+  };
 
   return (
     <main className={homeStyle.registerStyleMainContainer}>
@@ -14,22 +34,8 @@ export const Home = () => {
         <RootImage />
       </div>
       <div>
-        <p>Are you a </p>
-        <button
-          onClick={() => {
-            navigate("/university/home");
-          }}
-        >
-          University
-        </button>
-        <p>or a</p>
-        <button
-          onClick={() => {
-            navigate("/student/home");
-          }}
-        >
-          Student
-        </button>
+        <button onClick={() => redirectTo("university")}>University</button>
+        <button onClick={() => redirectTo("student")}>Student</button>
       </div>
     </main>
   );
