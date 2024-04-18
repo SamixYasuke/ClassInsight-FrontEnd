@@ -20,7 +20,7 @@ import MenuModal from "../components/MenuModal";
 
 const UniversityHome = () => {
   const navigate = useNavigate();
-  const { isAuthenticated, loginWithRedirect, user, isLoading } = useAuth0();
+  const { isAuthenticated, loginWithPopup, user, isLoading } = useAuth0();
   const [feedbackForms, setFeedbackForms] = useState({
     forms: [],
     dateRange: {},
@@ -36,20 +36,20 @@ const UniversityHome = () => {
     checkUniversityAuth(
       isLoading,
       user,
-      loginWithRedirect,
+      // loginWithPopup,
       isAuthenticated,
       navigate,
       toast
     );
     getFeedbackForms();
-  }, [
-    isAuthenticated,
-    isLoading,
-    loginWithRedirect,
-    navigate,
-    user,
-    formBtnState,
-  ]);
+  }, [isLoading, user, isAuthenticated, navigate]);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      toast.warn("Please authenticate before accessing university dashboard.");
+      navigate("/");
+    }
+  }, [navigate]);
 
   const getFeedbackForms = async (page = 1) => {
     setIsGettingForm(true);
