@@ -36,8 +36,9 @@
 
 .universityFormContainer > div:nth-child(3) {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  /* flex-direction: column; */
   gap: 10px;
   overflow-x: auto;
   flex-wrap: wrap;
@@ -63,8 +64,8 @@
 }
 
 canvas {
-  width: 90px !important;
-  height: 90px !important;
+  width: 180px !important;
+  height: 180px !important;
   object-fit: cover;
   display: inline-block !important;
   flex-shrink: 0;
@@ -285,6 +286,7 @@ canvas {
     gap: 50%;
     box-sizing: border-box;
     padding: 0 10px;
+    display: block;
   }
 }
 
