@@ -20,9 +20,9 @@ const Home = () => {
   };
 
   const redirectTo = (destination) => {
-    if (isAuthenticated) {
+    if (isAuthenticated && !isLoading) {
       navigate(`/${destination}/home`);
-    } else {
+    } else if (!isAuthenticated && !isLoading) {
       handleAuthentication(destination);
     }
   };
