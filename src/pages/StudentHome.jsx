@@ -42,7 +42,7 @@ const StudentHome = () => {
   }, [isAuthenticated, isLoading, navigate, user, btnState]);
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!isAuthenticated && !isLoading) {
       toast.warn("Please authenticate before accessing student dashboard.");
       navigate("/");
     }
