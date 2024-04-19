@@ -4,7 +4,7 @@ import axios from "axios";
 const checkStudentAuth = async (
   isLoading,
   user,
-  loginWithRedirect,
+  // loginWithPopup,
   isAuthenticated,
   navigate,
   toast
@@ -26,9 +26,9 @@ const checkStudentAuth = async (
       } catch (error) {
         console.error("Error checking authId:", error);
       }
-    } else {
-      await loginWithRedirect();
-    }
+    } //else {
+    //   await loginWithPopup();
+    // }
   }
 };
 
