@@ -45,11 +45,11 @@ const UniversityHome = () => {
   }, [isLoading, user, isAuthenticated, navigate]);
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!isAuthenticated && !isLoading) {
       toast.warn("Please authenticate before accessing university dashboard.");
       navigate("/");
     }
-  }, [navigate]);
+  }, []);
 
   const getFeedbackForms = async (page = 1) => {
     setIsGettingForm(true);
