@@ -9,6 +9,7 @@ import baseUrl from "../utilities/baseUrl";
 import LoadingFormSpinner from "../components/LoadingFormSpinner";
 import LoadingModal from "../components/LoadingModal";
 import studentRegisterStyles from "../assets/css/student-register.module.css";
+import backBtnIcon from "../assets/images/Back btn icon.png";
 
 const StudentRegister = () => {
   const navigate = useNavigate();
@@ -27,10 +28,6 @@ const StudentRegister = () => {
   const [universityIsRegistering, setUniversityIsRegistering] = useState(false);
 
   useEffect(() => {
-    if (!isLoading && !isAuthenticated) {
-      loginWithRedirect();
-      return;
-    }
     if (!isLoading && isAuthenticated) {
       fetchUniversities();
     }
@@ -136,6 +133,15 @@ const StudentRegister = () => {
 
   return (
     <>
+      <div className={studentRegisterStyles.backBtnIconContainer}>
+        <img
+          src={backBtnIcon}
+          alt="backBtnIcon"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
+      </div>
       <section className={studentRegisterStyles.studentRegisterContainer}>
         {user?.sub && <p>Student Id: {user?.sub}</p>}
         <h3>Student Registration</h3>
