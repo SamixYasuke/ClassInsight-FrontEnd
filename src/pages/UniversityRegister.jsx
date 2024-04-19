@@ -10,6 +10,7 @@ import universityRegisterStyle from "../assets/css/university-registration.modul
 import isValidEmail from "../utilities/validateEmail";
 import baseUrl from "../utilities/baseUrl";
 import LoadingModal from "../components/LoadingModal";
+import backBtnIcon from "../assets/images/Back btn icon.png";
 
 const UniversityRegister = () => {
   const [universityName, setUniversityName] = useState("");
@@ -97,74 +98,89 @@ const UniversityRegister = () => {
   };
 
   return (
-    <section>
-      {isLoading && (
-        <div>
-          <LoadingFormSpinner />
-        </div>
-      )}
-      {error && <p>Error loading user data. Please try again.</p>}
-      {!isLoading && !error && user && (
-        <>
-          <form className={universityRegisterStyle.UniversityRegisterationForm}>
-            <p>{`University Id: ${user?.sub}`}</p>
-            <h2>University Registration</h2>
-            <input
-              type="text"
-              placeholder="University Name"
-              value={universityName}
-              onChange={(e) => setUniversityName(e.target.value)}
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-            <div className={universityRegisterStyle.addDepartmentContainer}>
+    <>
+      <section>
+        {isLoading && (
+          <div>
+            <LoadingFormSpinner />
+          </div>
+        )}
+        {error && <p>Error loading user data. Please try again.</p>}
+        {!isLoading && !error && user && (
+          <>
+            <div className={universityRegisterStyle.backBtnIconContainer}>
+              <img
+                src={backBtnIcon}
+                alt="backBtnIcon"
+                onClick={() => {
+                  navigate("/");
+                }}
+              />
+            </div>
+            <form
+              className={universityRegisterStyle.UniversityRegisterationForm}
+            >
+              <p>{`University Id: ${user?.sub}`}</p>
+              <h2>University Registration</h2>
               <input
                 type="text"
-                placeholder="Department"
-                value={department}
-                onChange={(e) => setDepartment(e.target.value)}
+                placeholder="University Name"
+                value={universityName}
+                onChange={(e) => setUniversityName(e.target.value)}
               />
-              <button type="button" onClick={handleAddDepartment}>
-                Add Department
-              </button>
-            </div>
-            {departments.length > 0 && (
-              <div className={universityRegisterStyle.departmentsContainerDiv}>
-                <p>Departments:</p>
-                <div>
-                  {departments.map((dep, index) => (
-                    <div key={index}>
-                      <p>{dep}</p>
-                      <button
-                        type="button"
-                        onClick={() => handleRemoveDepartment(index)}
-                      >
-                        Remove
-                      </button>
-                      &nbsp;
-                    </div>
-                  ))}
-                </div>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+              <div className={universityRegisterStyle.addDepartmentContainer}>
+                <input
+                  type="text"
+                  placeholder="Department"
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
+                />
+                <button type="button" onClick={handleAddDepartment}>
+                  Add Department
+                </button>
               </div>
-            )}
-            <button type="submit" onClick={handleSubmit}>
-              Register
-            </button>
-          </form>
-        </>
-      )}
-      {isRegistering && <LoadingModal />}
-    </section>
+              {departments.length > 0 && (
+                <div
+                  className={universityRegisterStyle.departmentsContainerDiv}
+                >
+                  <p>Departments:</p>
+                  <div>
+                    {departments.map((dep, index) => (
+                      <div key={index}>
+                        <p>{dep}</p>
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveDepartment(index)}
+                        >
+                          Remove
+                        </button>
+                        &nbsp;
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              <button type="submit" onClick={handleSubmit}>
+                Register
+              </button>
+            </form>
+          </>
+        )}
+        {isRegistering && <LoadingModal />}
+      </section>
+    </>
   );
 };
 
