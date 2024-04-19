@@ -1,11 +1,12 @@
 .studentFeedbackContainer {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   /* background-color: aqua; */
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 40px 0;
   width: 80%;
+  height: 100%;
 }
 
 .studentFeedbackDiv1 {
